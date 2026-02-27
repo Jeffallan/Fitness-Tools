@@ -108,6 +108,9 @@ venv.bak/
 # mypy
 .mypy_cache/
 
+# ruff
+.ruff_cache/
+
 #pydev
 .project
 .project/

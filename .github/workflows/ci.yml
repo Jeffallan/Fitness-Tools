@@ -27,6 +27,16 @@ jobs:
       - run: pip install mypy
       - run: mypy fitness_tools/ --strict
 
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/validate-skills.py
+      - run: python scripts/validate-markdown.py
+
   test:
     runs-on: ubuntu-latest
     strategy:

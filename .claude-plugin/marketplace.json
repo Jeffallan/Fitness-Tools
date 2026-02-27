@@ -1,0 +1,49 @@
+{
+  "name": "fitness-tools",
+  "owner": {
+    "name": "jeffallan"
+  },
+  "metadata": {
+    "description": "ACSM-sourced fitness skills for body composition, rep max estimation, and macronutrient planning",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "fitness-tools",
+      "source": "./",
+      "description": "3 specialized fitness skills providing body composition assessment (Durnin-Womersley, Jackson-Pollock 3/4/7-site), one-rep max estimation (ACSM percentage table), and macronutrient meal planning (ectomorph, mesomorph, endomorph body types). Powered by the fitness-tools Python library.",
+      "version": "1.0.0",
+      "author": {
+        "name": "jeffallan",
+        "email": "github@jeffallan"
+      },
+      "homepage": "https://github.com/Jeffallan/Fitness-Tools",
+      "repository": "https://github.com/Jeffallan/Fitness-Tools",
+      "license": "Apache-2.0",
+      "keywords": [
+        "claude-skill",
+        "claude-code",
+        "fitness",
+        "body-composition",
+        "skinfold",
+        "one-rep-max",
+        "1rm",
+        "macros",
+        "meal-planning",
+        "acsm",
+        "jackson-pollock",
+        "durnin-womersley",
+        "model-invoked"
+      ],
+      "category": "health",
+      "tags": [
+        "fitness",
+        "health",
+        "nutrition",
+        "body-composition",
+        "strength-training"
+      ],
+      "skills": "./skills/"
+    }
+  ]
+}

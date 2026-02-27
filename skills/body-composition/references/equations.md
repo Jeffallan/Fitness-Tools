@@ -1,8 +1,6 @@
-# Fitness-Tools Equation Reference
+# Body Composition Equations
 
-## Body Composition Equations
-
-### Durnin-Womersley (1974)
+## Durnin-Womersley (1974)
 
 **Sites (4):** Triceps, biceps, subscapular, suprailiac
 
@@ -35,7 +33,7 @@ where C and M are age- and sex-specific constants.
 
 ---
 
-### Jackson-Pollock 7-Site (1978)
+## Jackson-Pollock 7-Site (1978)
 
 **Sites (7):** Chest, axilla, tricep, subscapular, abdominal, suprailiac, thigh
 
@@ -50,7 +48,7 @@ where S = sum of 7 skinfolds (mm).
 
 ---
 
-### Jackson-Pollock 4-Site
+## Jackson-Pollock 4-Site
 
 **Sites (4):** Abdominal, triceps, thigh, suprailiac
 
@@ -63,7 +61,7 @@ where S = sum of 4 skinfolds (mm).
 
 ---
 
-### Jackson-Pollock 3-Site (1985)
+## Jackson-Pollock 3-Site (1985)
 
 **Sites (3):** Chest, triceps, subscapular (male) OR triceps, thigh, suprailiac (female)
 
@@ -89,56 +87,3 @@ All take body density (g/cm³) as input and return body fat percentage.
 | **Ortiz** (1992)   | `(483.2 / D) - 436.9` | Hispanic populations         |
 
 **Note:** Siri is the most commonly used default. Population-specific equations (Schutte, Wagner, Ortiz) may provide better accuracy for specific demographics.
-
----
-
-## Rep Max Estimation
-
-**Method:** Percentage-of-1RM table (ACSM standard)
-
-Maps repetition counts to percentages of one-rep maximum:
-
-| Reps | % of 1RM | Reps | % of 1RM |
-|------|----------|------|----------|
-| 1    | 100%     | 11   | 70%      |
-| 2    | 95%      | 12   | 67%      |
-| 3    | 93%      | 13   | 66.5%    |
-| 4    | 90%      | 14   | 66%      |
-| 5    | 87%      | 15   | 65%      |
-| 6    | 85%      | 16   | 64%      |
-| 7    | 83%      | 17   | 63%      |
-| 8    | 80%      | 18   | 62%      |
-| 9    | 77%      | 19   | 61%      |
-| 10   | 75%      | 20   | 60%      |
-
-**Formula:** `estimated_weight = (current_weight / percent[current_reps]) * percent[desired_reps]`
-
-Result is rounded to the nearest specified base (typically 2.5 or 5.0 lbs).
-
-**Accuracy note:** Best results when using 5 or fewer reps as the base measurement. Percentages are within +/- 0.5-2% depending on training status.
-
----
-
-## Macronutrient Planning
-
-### Body Type Macro Distributions
-
-| Body Type   | Fat  | Protein | Carbs |
-|------------|------|---------|-------|
-| Ectomorph  | 20%  | 25%     | 55%   |
-| Mesomorph  | 30%  | 30%     | 40%   |
-| Endomorph  | 40%  | 35%     | 25%   |
-
-### Calorie Ranges (calories per pound of body weight)
-
-| Activity   | Weight Loss | Maintenance | Weight Gain |
-|-----------|-------------|-------------|-------------|
-| Sedentary | 10-12       | 12-14       | 16-18       |
-| Moderate  | 12-14       | 14-16       | 18-20       |
-| Very      | 14-16       | 16-18       | 20-22       |
-
-### Macro Gram Conversions
-
-- Fat: calories / 9 = grams
-- Protein: calories / 4 = grams
-- Carbohydrates: calories / 4 = grams

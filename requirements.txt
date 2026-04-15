@@ -1,0 +1,5 @@
+# Development dependencies
+pytest>=8.0
+pytest-cov
+mypy
+ruff

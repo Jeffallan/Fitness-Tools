@@ -1,0 +1,40 @@
+/* Green/teal fitness theme */
+
+:root {
+  --sl-color-accent-low: #d1fae5;
+  --sl-color-accent: #059669;
+  --sl-color-accent-high: #064e3b;
+  --sl-color-white: #1a1a2e;
+  --sl-color-gray-1: #3d3d5c;
+  --sl-color-gray-2: #53536e;
+  --sl-color-gray-3: #8888a0;
+  --sl-color-gray-4: #b8b8cc;
+  --sl-color-gray-5: #d4d4e0;
+  --sl-color-gray-6: #ededf4;
+  --sl-color-black: #fafafe;
+}
+
+:root[data-theme='dark'] {
+  --sl-color-accent-low: #064e3b;
+  --sl-color-accent: #34d399;
+  --sl-color-accent-high: #a7f3d0;
+  --sl-color-white: #fafafe;
+  --sl-color-gray-1: #ededf4;
+  --sl-color-gray-2: #d4d4e0;
+  --sl-color-gray-3: #8888a0;
+  --sl-color-gray-4: #53536e;
+  --sl-color-gray-5: #3d3d5c;
+  --sl-color-gray-6: #1a1a2e;
+  --sl-color-black: #0f0f1a;
+}
+
+/* Gradient accent bar under site header */
+header.header {
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(90deg, #059669, #34d399, #6ee7b7) 1;
+}
+
+/* Skill metadata tables: tighter layout */
+.sl-markdown-content table:first-of-type {
+  margin-top: 0.5rem;
+}

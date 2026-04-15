@@ -126,7 +126,7 @@ function rewriteLinks(body) {
 // ─── Clean synced content ────────────────────────────────────────────
 
 function cleanSyncedContent() {
-  const syncedDirs = ['skills'];
+  const syncedDirs = ['skills', 'library'];
   for (const dir of syncedDirs) {
     const full = path.join(DOCS_DIR, dir);
     if (fs.existsSync(full)) {
@@ -244,10 +244,13 @@ function syncSkillPages() {
       relatedBlock = `> **Related Skills:** ${links.join(' + ')}\n\n`;
     }
 
-    // Rewrite reference table links to GitHub blob URLs
+    // Rewrite reference table links to on-site pages
     body = body.replace(
       /`references\/([^`]+)`/g,
-      (_match, refPath) => `[references/${refPath}](${GITHUB_BLOB}/skills/${dir}/references/${refPath})`,
+      (_match, refPath) => {
+        const slug = refPath.replace(/\.md$/, '');
+        return `[references/${refPath}](${BASE_PATH}/skills/${dir}-${slug}/)`;
+      },
     );
 
     body = rewriteLinks(body);
@@ -280,6 +283,103 @@ function syncSkillPages() {
   }
 
   console.log(`  ${count} skill pages synced`);
+}
+
+// ─── Sync Python library guides ─────────────────────────────────────
+
+function syncLibraryDocs() {
+  const libraryDir = path.join(ROOT, 'docs-library');
+  if (!fs.existsSync(libraryDir)) return;
+
+  const files = fs.readdirSync(libraryDir).filter((f) => f.endsWith('.md'));
+  let count = 0;
+  for (const file of files) {
+    const srcPath = path.join(libraryDir, file);
+    const content = fs.readFileSync(srcPath, 'utf-8');
+
+    const title = extractH1(content) || file.replace(/\.md$/, '');
+    let body = removeH1(content);
+    body = rewriteLinks(body);
+
+    const slug = file.replace(/\.md$/, '');
+    const sidebarLabel = title
+      .replace(/^(Calculating|Estimating) /, '')
+      .replace(/^Macronutrient Assignments$/, 'Meal Planning');
+    const description = `Python library guide: ${sidebarLabel}`;
+
+    const fm = starlightFrontmatter({
+      title: `Fitness Tools | ${title}`,
+      description,
+      sidebar: { label: sidebarLabel },
+    });
+
+    const destPath = path.join(DOCS_DIR, 'library', `${slug}.md`);
+    ensureDir(path.dirname(destPath));
+    fs.writeFileSync(destPath, fm + '\n' + body.trim() + '\n');
+    count++;
+
+    pageManifest.push({
+      siteUrl: `/library/${slug}/`,
+      title,
+      description,
+      category: 'library',
+      contentFile: `library/${slug}.md`,
+    });
+  }
+
+  console.log(`  ${count} library pages synced`);
+}
+
+// ─── Sync skill reference pages ─────────────────────────────────────
+
+function syncSkillReferences() {
+  const skillsDir = path.join(ROOT, 'skills');
+  const dirs = fs
+    .readdirSync(skillsDir)
+    .filter((d) => fs.statSync(path.join(skillsDir, d)).isDirectory());
+
+  let count = 0;
+  for (const dir of dirs) {
+    const refsDir = path.join(skillsDir, dir, 'references');
+    if (!fs.existsSync(refsDir)) continue;
+
+    const refFiles = fs.readdirSync(refsDir).filter((f) => f.endsWith('.md'));
+    for (const refFile of refFiles) {
+      const srcPath = path.join(refsDir, refFile);
+      const content = fs.readFileSync(srcPath, 'utf-8');
+
+      const h1 = extractH1(content);
+      const skillTitle = dir.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+      const refTitle = h1 || refFile.replace(/\.md$/, '');
+      const sidebarLabel = `${skillTitle} Reference`;
+
+      let body = removeH1(content);
+      body = rewriteLinks(body);
+
+      const slug = refFile.replace(/\.md$/, '');
+      const destFile = `${dir}-${slug}.md`;
+      const fm = starlightFrontmatter({
+        title: `Fitness Tools | ${refTitle}`,
+        description: `Reference for the ${skillTitle} skill`,
+        sidebar: { label: sidebarLabel },
+      });
+
+      const destPath = path.join(DOCS_DIR, 'skills', destFile);
+      ensureDir(path.dirname(destPath));
+      fs.writeFileSync(destPath, fm + '\n' + body.trim() + '\n');
+      count++;
+
+      pageManifest.push({
+        siteUrl: `/skills/${dir}-${slug}/`,
+        title: refTitle,
+        description: `Reference for the ${skillTitle} skill`,
+        category: 'references',
+        contentFile: `skills/${destFile}`,
+      });
+    }
+  }
+
+  console.log(`  ${count} reference pages synced`);
 }
 
 // ─── Clean generated public content ──────────────────────────────────
@@ -352,16 +452,27 @@ function generateIndexMirror() {
 
   const markdown = `# Fitness Tools
 
-> ${versionData.skillCount} specialized fitness skills for Claude Code — ACSM-sourced body composition, rep max estimation, and macronutrient planning.
+> ${versionData.skillCount} specialized fitness skills — ACSM-sourced body composition, rep max estimation, and macronutrient planning.
 
 ## Quick Install
+
+Python library:
 
 \`\`\`bash
 pip install fitness-tools
 \`\`\`
 
+Agent skills (Claude Code):
+
+\`\`\`
+/plugin marketplace add Jeffallan/Fitness-Tools
+/plugin install fitness-tools@fitness-tools
+\`\`\`
+
+Agent skills ([skills.sh](https://skills.sh)):
+
 \`\`\`bash
-claude install Jeffallan/Fitness-Tools
+npx skills add Jeffallan/Fitness-Tools
 \`\`\`
 
 ## Stats
@@ -386,7 +497,7 @@ function generateLlmsTxt() {
   const lines = [];
   lines.push('# Fitness Tools');
   lines.push(
-    `> ${versionData.skillCount} specialized fitness skills for Claude Code — ACSM-sourced equations for body composition, rep max estimation, and macronutrient planning.`,
+    `> ${versionData.skillCount} specialized fitness skills — ACSM-sourced equations for body composition, rep max estimation, and macronutrient planning.`,
   );
   lines.push('');
 
@@ -400,6 +511,22 @@ function generateLlmsTxt() {
   if (groups['skills']?.length) {
     lines.push('## Skills');
     for (const { siteUrl, title, description } of groups['skills']) {
+      lines.push(`- [${title}](${siteUrl}index.html.md): ${description}`);
+    }
+    lines.push('');
+  }
+
+  if (groups['library']?.length) {
+    lines.push('## Python Library');
+    for (const { siteUrl, title, description } of groups['library']) {
+      lines.push(`- [${title}](${siteUrl}index.html.md): ${description}`);
+    }
+    lines.push('');
+  }
+
+  if (groups['references']?.length) {
+    lines.push('## References');
+    for (const { siteUrl, title, description } of groups['references']) {
       lines.push(`- [${title}](${siteUrl}index.html.md): ${description}`);
     }
     lines.push('');
@@ -424,7 +551,7 @@ function generateLlmsTxt() {
 function generateLlmsFullTxt() {
   const sections = [];
 
-  const orderedCategories = ['skills', 'project'];
+  const orderedCategories = ['skills', 'library', 'references', 'project'];
 
   const groups = {};
   for (const entry of pageManifest) {
@@ -465,6 +592,12 @@ function main() {
 
   console.log('Building skill index and syncing skill pages...');
   syncSkillPages();
+
+  console.log('Syncing skill reference pages...');
+  syncSkillReferences();
+
+  console.log('Syncing Python library guides...');
+  syncLibraryDocs();
 
   console.log('Generating LLM content...');
   cleanGeneratedPublicContent();

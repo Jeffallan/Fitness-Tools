@@ -41,6 +41,10 @@ export default defineConfig({
           ],
         },
         {
+          label: 'Python Library',
+          autogenerate: { directory: 'library' },
+        },
+        {
           label: 'Skills',
           autogenerate: { directory: 'skills' },
         },

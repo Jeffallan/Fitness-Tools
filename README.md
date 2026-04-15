@@ -64,19 +64,30 @@ All public types are importable from `fitness_tools`:
 | Enums | `Sex`, `BodyType`, `ActivityLevel`, `Goal` |
 | Data Models | `BodyCompositionResult`, `MacroTargets`, `RepEstimate` |
 
-## Claude Skills
+## Agent Skills
 
-This package includes 3 Claude Code skills for AI-assisted fitness calculations:
-
-```bash
-claude install Jeffallan/Fitness-Tools
-```
+This package includes 3 skills for AI-assisted fitness calculations:
 
 | Skill | Description |
 |-------|-------------|
 | `body-composition` | Skinfold-based body fat assessment |
 | `rep-max` | One-rep max estimation via ACSM table |
 | `meal-planner` | Macronutrient planning by body type |
+
+### Install
+
+**Claude Code plugin** — run inside a Claude Code session:
+
+```
+/plugin marketplace add Jeffallan/Fitness-Tools
+/plugin install fitness-tools@fitness-tools
+```
+
+**[skills.sh](https://skills.sh)** — from any terminal:
+
+```bash
+npx skills add Jeffallan/Fitness-Tools
+```
 
 ## How To Contribute
 

@@ -110,6 +110,7 @@ site/src/content/docs/readme.md
 site/src/content/docs/changelog.md
 site/src/content/docs/contributing.md
 site/src/content/docs/skills/
+site/src/content/docs/library/
 site/public/llms.txt
 site/public/llms-full.txt
 site/public/index.html.md
@@ -117,6 +118,7 @@ site/public/readme/
 site/public/changelog/
 site/public/contributing/
 site/public/skills/
+site/public/library/
 
 # mypy
 .mypy_cache/

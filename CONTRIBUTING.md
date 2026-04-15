@@ -1,9 +1,8 @@
 # How To Contribute
 
-When contributing to this repository, please discuss the change you wish to make first via issue,
-[email](mailto:maverickcoders@pm.me), or any other method with the owners of this repository before making a change.
+When contributing to this repository, please discuss the change you wish to make first via issue.
 
-We have pull request guidelines and a code of conduct; please follow these in all your interactions with the project.
+We have pull request guidelines; please follow these in all your interactions with the project.
 
 ## Pull Request Guidelines
 
@@ -40,7 +39,3 @@ Make one commit per feature or bug. Short histories aid in finding bugs and iden
 ### Be Descriptive
 
 State a convincing case why your PR should be accepted.
-
-## Code of Conduct
-
-See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).

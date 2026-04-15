@@ -1,0 +1,46 @@
+---
+title: Fitness Tools
+description: Python package for health and fitness calculations using ACSM-sourced equations.
+template: splash
+hero:
+  tagline: Body composition, rep max estimation, and macronutrient planning — powered by ACSM-sourced equations.
+  actions:
+    - text: Get Started
+      link: /Fitness-Tools/readme/
+      icon: right-arrow
+      variant: primary
+    - text: Browse Skills
+      link: /Fitness-Tools/skills/body-composition/
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid stagger>
+  <Card title="3 Skills" icon="puzzle">
+    Claude Code skills for body composition assessment, rep max estimation, and macronutrient meal planning.
+  </Card>
+  <Card title="ACSM-Sourced" icon="open-book">
+    All equations sourced from the American College of Sports Medicine guidelines.
+  </Card>
+  <Card title="Zero Dependencies" icon="rocket">
+    100% pure Python. No third-party packages required.
+  </Card>
+  <Card title="Fully Typed" icon="approve-check">
+    StrEnum enums, frozen dataclasses, and strict mypy compliance.
+  </Card>
+</CardGrid>
+
+## Quick Install
+
+```bash
+pip install fitness-tools
+```
+
+### Claude Skills
+
+```bash
+claude install Jeffallan/Fitness-Tools
+```
+
+See the [README](/Fitness-Tools/readme/) for full usage and API details.

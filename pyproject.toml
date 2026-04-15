@@ -35,6 +35,9 @@ Documentation = "https://jeffallan.github.io/Fitness-Tools"
 [project.optional-dependencies]
 dev = ["pytest>=8.0", "pytest-cov", "mypy", "ruff"]
 
+[tool.setuptools.packages.find]
+include = ["fitness_tools*"]
+
 [tool.ruff]
 target-version = "py311"
 line-length = 100

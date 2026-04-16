@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:03A9F4,100:FFB300&height=200&section=header&text=Fitness%20Tools&fontSize=80&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Python%20Package%20%2B%20Agent%20Skills%20for%20Health%20%26%20Performance&descSize=20&descAlignY=55" width="100%" alt="Fitness Tools banner — Python Package and Agent Skills" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:03A9F4,100:FFB300&height=200&section=header&text=Fitness%20Tools&fontSize=80&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Python%20Package%20%2B%20Agent%20Skills%20for%20Health%20and%20Performance&descSize=20&descAlignY=55" width="100%" alt="Fitness Tools banner — Python Package and Agent Skills" />
 </p>
 
 <p align="center">

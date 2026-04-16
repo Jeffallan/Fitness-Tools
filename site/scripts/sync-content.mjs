@@ -462,14 +462,14 @@ Python library:
 pip install fitness-tools
 \`\`\`
 
-Agent skills (Claude Code):
+Agent Skills (Claude Code):
 
 \`\`\`
 /plugin marketplace add Jeffallan/Fitness-Tools
 /plugin install fitness-tools@fitness-tools
 \`\`\`
 
-Agent skills ([skills.sh](https://skills.sh)):
+Agent Skills ([skills.sh](https://skills.sh)):
 
 \`\`\`bash
 npx skills add Jeffallan/Fitness-Tools

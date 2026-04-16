@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:03A9F4,100:FFB300&height=200&section=header&text=Fitness%20Tools&fontSize=80&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Python%20Package%20%2B%20Agent%20Skills%20for%20Health%20%26%20Performance&descSize=20&descAlignY=55" width="100%" alt="Fitness Tools" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:03A9F4,100:FFB300&height=200&section=header&text=Fitness%20Tools&fontSize=80&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Python%20Package%20%2B%20Agent%20Skills%20for%20Health%20%26%20Performance&descSize=20&descAlignY=55" width="100%" alt="Fitness Tools banner — Python Package and Agent Skills" />
 </p>
 
 <p align="center">
@@ -38,7 +38,7 @@ pip install fitness-tools
 ```python
 from fitness_tools import DurninWomersley, Sex
 
-calc = DurninWomersley(age=30, sex=Sex.MALE, skinfolds=(12, 8, 15, 10))
+calc = DurninWomersley(30, Sex.MALE, (12, 8, 15, 10))
 density = calc.body_density()
 body_fat = calc.siri(density)
 ```

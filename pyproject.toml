@@ -4,13 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fitness-tools"
-version = "1.0.0"
-description = "Python package for health and fitness calculations using ACSM-sourced equations"
+version = "1.0.1"
+description = "Python package for health and fitness calculations using validated, research-backed equations"
 readme = "README.md"
 license = { text = "Apache-2.0" }
 requires-python = ">=3.11"
 authors = [
-    { name = "Maverick Coders", email = "maverickcoders@pm.me" },
+    { name = "jeffallan" },
 ]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
@@ -31,6 +31,7 @@ Homepage = "https://github.com/Jeffallan/Fitness-Tools"
 Repository = "https://github.com/Jeffallan/Fitness-Tools"
 Issues = "https://github.com/Jeffallan/Fitness-Tools/issues"
 Documentation = "https://jeffallan.github.io/Fitness-Tools"
+Author = "https://jeffallan.github.io"
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0", "pytest-cov", "mypy", "ruff"]

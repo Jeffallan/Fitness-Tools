@@ -105,7 +105,7 @@ You control everything. Set macro percentages and calorie ranges manually.
 | Parameter | Accepted values |
 |---|---|
 | `body_type` | `"ectomorph"`, `"mesomorph"`, `"endomorph"` (or `BodyType.*`) |
-| `activity_level` | `"sedentary"`, `"light"`, `"moderate"`, `"very"`, `"extra"` (or `ActivityLevel.*`) |
+| `activity_level` | `"sedentary"`, `"moderate"`, `"very"` (or `ActivityLevel.*`) |
 | `goal` | `"weight_loss"`, `"maintenance"`, `"weight_gain"` (or `Goal.*`) |
 | `fat_percent`, `protein_percent`, `carb_percent` | Floats that must sum to `1.0` |
 | `min_cal`, `max_cal` | Calories per pound of body weight |

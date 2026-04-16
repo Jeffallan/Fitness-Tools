@@ -452,7 +452,7 @@ function generateIndexMirror() {
 
   const markdown = `# Fitness Tools
 
-> ${versionData.skillCount} specialized fitness skills — ACSM-sourced body composition, rep max estimation, and macronutrient planning.
+> ${versionData.skillCount} specialized fitness skills — validated, research-backed body composition, rep max estimation, and macronutrient planning.
 
 ## Quick Install
 
@@ -497,7 +497,7 @@ function generateLlmsTxt() {
   const lines = [];
   lines.push('# Fitness Tools');
   lines.push(
-    `> ${versionData.skillCount} specialized fitness skills — ACSM-sourced equations for body composition, rep max estimation, and macronutrient planning.`,
+    `> ${versionData.skillCount} specialized fitness skills — validated, research-backed equations for body composition, rep max estimation, and macronutrient planning.`,
   );
   lines.push('');
 

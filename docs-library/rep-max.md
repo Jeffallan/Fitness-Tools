@@ -7,7 +7,7 @@ Different repetition ranges produce different training adaptations. Broadly:
 - **Strength:** ≤ 6 reps
 - **Power:** 1–6 reps
 
-As goals shift over time, lifters need a way to quickly translate a known working weight into the right weight for a new rep target. `RM_Estimator` does this translation using the ACSM percentage-of-1RM table.
+As goals shift over time, lifters need a way to quickly translate a known working weight into the right weight for a new rep target. `RM_Estimator` does this translation using a validated percentage-of-1RM table.
 
 ## Constructor Arguments
 
@@ -54,4 +54,4 @@ Percentages of 1RM from this table are accurate to within **±0.5% to 2%**, depe
 
 ## Reference
 
-For the full ACSM rep-percentage table see the [Rep Max skill reference](/Fitness-Tools/skills/rep-max-percentage-table/).
+For the full rep-percentage table see the [Rep Max skill reference](/Fitness-Tools/skills/rep-max-percentage-table/).

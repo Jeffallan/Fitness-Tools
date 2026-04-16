@@ -5,14 +5,14 @@
   },
   "metadata": {
     "description": "Research-backed fitness skills for body composition, rep max estimation, and macronutrient planning",
-    "version": "1.0.0"
+    "version": "1.0.1"
   },
   "plugins": [
     {
       "name": "fitness-tools",
       "source": "./",
       "description": "3 specialized fitness skills providing body composition assessment (Durnin-Womersley, Jackson-Pollock 3/4/7-site), one-rep max estimation (validated percentage table), and macronutrient meal planning (ectomorph, mesomorph, endomorph body types). Powered by the fitness-tools Python library.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "author": {
         "name": "jeffallan",
         "email": "github@jeffallan"

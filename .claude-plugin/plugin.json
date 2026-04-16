@@ -1,6 +1,6 @@
 {
   "name": "fitness-tools",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "3 specialized fitness skills providing body composition assessment (Durnin-Womersley, Jackson-Pollock 3/4/7-site), one-rep max estimation (validated percentage table), and macronutrient meal planning (ectomorph, mesomorph, endomorph body types). Powered by the fitness-tools Python library.",
   "author": {
     "name": "jeffallan",

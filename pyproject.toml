@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fitness-tools"
-version = "1.0.0"
+version = "1.0.1"
 description = "Python package for health and fitness calculations using validated, research-backed equations"
 readme = "README.md"
 license = { text = "Apache-2.0" }

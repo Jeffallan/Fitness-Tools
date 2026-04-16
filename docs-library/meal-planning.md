@@ -8,8 +8,8 @@ The goal of this module is to automate those calculations so you can spend more 
 
 This module exposes a single class, `MakeMeal`, with two methods:
 
-- `daily_requirements()` — returns a `MacroTargets` dataclass of recommended daily calories and macronutrients.
-- `make_meal(n)` — returns a `MacroTargets` dataclass representing daily requirements divided across *n* meals.
+- `daily_requirements()` returns a `MacroTargets` dataclass of recommended daily calories and macronutrients.
+- `make_meal(n)` returns a `MacroTargets` dataclass representing daily requirements divided across *n* meals.
 
 `MacroTargets` supports attribute access (`result.min_calories`) — the preferred style — and also continues to support legacy dict access (`result["min_calories"]`) with a `DeprecationWarning`.
 
@@ -40,7 +40,7 @@ Body type dictates macro percentages; activity level and goal dictate calorie ra
 (630.0, 720.0)
 ```
 
-All typed enums (`Goal`, `ActivityLevel`, `BodyType`) accept their string equivalents too — e.g., `goal="maintenance"` works the same as `goal=Goal.MAINTENANCE`.
+All typed enums (`Goal`, `ActivityLevel`, `BodyType`) accept their string equivalents too. For example, `goal="maintenance"` works the same as `goal=Goal.MAINTENANCE`.
 
 ## 2. Preset Macros + Custom Calories
 

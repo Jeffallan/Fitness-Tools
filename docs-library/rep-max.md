@@ -13,9 +13,9 @@ As goals shift over time, lifters need a way to quickly translate a known workin
 
 `RM_Estimator` takes three positional arguments:
 
-1. **Current weight** — the load you're currently lifting, ending in `.0` or `.5`
-2. **Current reps** — reps you can complete with that weight
-3. **Desired reps** — the rep target you want to train for
+1. **Current weight**: the load you're currently lifting, ending in `.0` or `.5`
+2. **Current reps**: reps you can complete with that weight
+3. **Desired reps**: the rep target you want to train for
 
 ## Example
 
@@ -32,7 +32,7 @@ By this calculation you should be able to lift **197.5 lbs for approximately 6 r
 
 ## Rounding Base
 
-`estimate_weight()` rounds to the nearest **2.5 lbs** by default. Pass a different `base` to change rounding — useful for kilogram plates or gyms with coarser weight increments.
+`estimate_weight()` rounds to the nearest **2.5 lbs** by default. Pass a different `base` to change rounding. Useful for kilogram plates or gyms with coarser weight increments.
 
 ```python
 >>> new_reps = RM_Estimator(175.0, 10, 6)

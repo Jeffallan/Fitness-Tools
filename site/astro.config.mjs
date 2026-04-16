@@ -8,7 +8,7 @@ export default defineConfig({
     starlight({
       title: 'Fitness Tools',
       description:
-        'Python package for health and fitness calculations using validated, research-backed equations — body composition, rep max estimation, and macronutrient planning.',
+        'Python package for health and fitness calculations using validated, research-backed equations: body composition, rep max estimation, and macronutrient planning.',
       customCss: ['./src/styles/custom.css'],
       head: [
         {

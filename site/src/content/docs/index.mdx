@@ -18,7 +18,7 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 
 <CardGrid stagger>
   <Card title="3 Skills" icon="puzzle">
-    Claude Code skills for body composition assessment, rep max estimation, and macronutrient meal planning.
+    Agent skills for body composition assessment, rep max estimation, and macronutrient meal planning.
   </Card>
   <Card title="Evidence-Based" icon="open-book">
     All equations are validated and grounded in published exercise science research.
@@ -33,14 +33,23 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 
 ## Quick Install
 
+**Python library:**
+
 ```bash
 pip install fitness-tools
 ```
 
-### Claude Skills
+**Agent skills — Claude Code** (run inside a Claude Code session):
+
+```
+/plugin marketplace add Jeffallan/Fitness-Tools
+/plugin install fitness-tools@fitness-tools
+```
+
+**Agent skills — [skills.sh](https://skills.sh)** (from any terminal):
 
 ```bash
-claude install Jeffallan/Fitness-Tools
+npx skills add Jeffallan/Fitness-Tools
 ```
 
 See the [README](/Fitness-Tools/readme/) for full usage and API details.

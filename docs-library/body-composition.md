@@ -12,7 +12,7 @@ The typical workflow for calculating body fat from skinfolds:
 
 ## Density-to-Body-Fat Conversions
 
-Every subclass in this module inherits from `GenericCalculator`, which exposes five methods that convert body density (g/cm³) to body fat percentage. These are **not interchangeable alternatives** — each was validated on a specific population, and picking the wrong one introduces systematic bias.
+Every subclass in this module inherits from `GenericCalculator`, which exposes five methods that convert body density (g/cm³) to body fat percentage. These are **not interchangeable alternatives**. Each was validated on a specific population, and picking the wrong one introduces systematic bias.
 
 | Method | Intended population | Formula |
 |---|---|---|
@@ -24,17 +24,17 @@ Every subclass in this module inherits from `GenericCalculator`, which exposes f
 
 These conversions are required for every equation in this module *except* `JacksonPollock4Site`, which computes body fat directly from skinfolds via its own `body_fat()` method.
 
-> **If your subject doesn't fit one of the specialized populations, use `siri()`** — it is the broadly taught default (ACSM, Heyward). Use `brozek()` when a refined fat-free-mass model is preferred. Only use `schutte()`, `wagner()`, or `ortiz()` when the subject matches the target population for that equation.
+> **If your subject doesn't fit one of the specialized populations, use `siri()`**. It is the widely used default (ACSM, Heyward). Use `brozek()` when a refined fat-free-mass model is preferred. Only use `schutte()`, `wagner()`, or `ortiz()` when the subject matches the target population for that equation.
 
 ## Constructor Arguments
 
 All skinfold classes take the same three positional arguments:
 
-1. **Age** — positive integer
-2. **Sex** — `"male"` / `"female"` string, or the typed `Sex.MALE` / `Sex.FEMALE` enum
-3. **Skinfold measurements** — tuple of integers in millimeters. Order does not matter.
+1. **Age**: positive integer
+2. **Sex**: `"male"` / `"female"` string, or the typed `Sex.MALE` / `Sex.FEMALE` enum
+3. **Skinfold measurements**: tuple of integers in millimeters. Order does not matter.
 
-The `Sex` enum is a `StrEnum`, so `Sex.MALE == "male"` — you can mix either form.
+The `Sex` enum is a `StrEnum`, so `Sex.MALE == "male"`. You can mix either form.
 
 ## Example: Durnin–Womersley (4-site)
 

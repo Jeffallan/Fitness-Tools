@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:03A9F4,100:FFB300&height=200&section=header&text=Fitness%20Tools&fontSize=80&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Python%20Package%20%2B%20Agent%20Skills%20for%20Health%20and%20Performance&descSize=20&descAlignY=55" width="100%" alt="Fitness Tools banner — Python Package and Agent Skills" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:03A9F4,100:FFB300&height=200&section=header&text=Fitness%20Tools&fontSize=80&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Python%20Package%20%2B%20Agent%20Skills%20for%20Health%20and%20Performance&descSize=20&descAlignY=55" width="100%" alt="Fitness Tools banner: Python Package and Agent Skills" />
 </p>
 
 <p align="center">
@@ -21,9 +21,9 @@ Fitness Tools is a Python package that facilitates healthy lifestyles using vali
 
 ## Features
 
-- **Body Composition** — Estimate body fat percentage from skinfold measurements using Durnin-Womersley and Jackson-Pollock (3/4/7-site) equations
-- **Rep Max Estimation** — Convert between weight and rep ranges using a validated percentage-of-1RM table
-- **Macronutrient Planning** — Calculate daily calorie ranges and macro distributions by body type, activity level, and goal
+- **Body Composition**: Estimate body fat percentage from skinfold measurements using Durnin-Womersley and Jackson-Pollock (3/4/7-site) equations
+- **Rep Max Estimation**: Convert between weight and rep ranges using a validated percentage-of-1RM table
+- **Macronutrient Planning**: Calculate daily calorie ranges and macro distributions by body type, activity level, and goal
 
 ## Quick Start
 
@@ -91,14 +91,14 @@ This package includes 3 skills for AI-assisted fitness calculations:
 
 ### Install
 
-**Claude Code plugin** — run inside a Claude Code session:
+**Claude Code plugin** run inside a Claude Code session:
 
 ```
 /plugin marketplace add Jeffallan/Fitness-Tools
 /plugin install fitness-tools@fitness-tools
 ```
 
-**[skills.sh](https://skills.sh)** — from any terminal:
+**[skills.sh](https://skills.sh)** from any terminal:
 
 ```bash
 npx skills add Jeffallan/Fitness-Tools

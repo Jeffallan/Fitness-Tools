@@ -16,8 +16,8 @@ Every subclass in this module inherits from `GenericCalculator`, which exposes f
 
 | Method | Intended population | Formula |
 |---|---|---|
-| `siri()` | General — the standard default | `%BF = 495/ρ − 450` |
-| `brozek()` | General — alternative default with refined fat-free-mass assumptions | `%BF = 457/ρ − 414.2` |
+| `siri()` | General. The standard default | `%BF = 495/ρ − 450` |
+| `brozek()` | General. The alternative default with refined fat-free-mass assumptions | `%BF = 457/ρ − 414.2` |
 | `schutte()` | African-American men | `%BF = 437.4/ρ − 392.8` |
 | `wagner()` | Black male athletes | `%BF = 486/ρ − 439` |
 | `ortiz()` | Black women | `%BF = 483.2/ρ − 436.9` |
